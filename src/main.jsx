@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './components/Home.jsx';
-import Book from './components/Book.jsx';
 import About from './components/About.jsx';
+import Books from './components/Books.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/books',
-        element:<Book></Book>
+        element:<Books></Books>,
+        loader:()=> fetch('https://api.itbook.store/1.0/new')
       },
       {
         path:"/about",
